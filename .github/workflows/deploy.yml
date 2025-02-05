@@ -32,6 +32,6 @@ jobs:
       - name: send project files
         run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next public package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
       - name: install remote npm packages
-        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && pnpm install'"
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && $HOME/.npm-global/bin/pnpm install'"
       - name: restart pm2
-        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'pm2 restart hackathon-lite'"
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c '$HOME/.local/share/pnpm/pm2 restart hackathon-lite'"
