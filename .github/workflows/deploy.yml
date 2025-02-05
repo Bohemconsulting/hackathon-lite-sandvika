@@ -29,5 +29,9 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
 
-      - name: deploy
-        run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
+      - name: send project files
+        run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next public package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
+      - name: install remote npm packages
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "cd ~/bohem-consulting/hackathon-lite-sandvika && pnpm install"
+      - name: restart pm2
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "pm2 restart hackathon-lite"
