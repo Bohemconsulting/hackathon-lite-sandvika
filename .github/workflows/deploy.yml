@@ -30,4 +30,4 @@ jobs:
           tags: tag:ci
 
       - name: deploy
-        run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next/ public/ package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
+        run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
