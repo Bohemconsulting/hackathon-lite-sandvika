@@ -1,0 +1,33 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+          
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: true
+          
+      - name: Build Next.js project
+        run: pnpm run build
+        
+      - name: Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: deploy
+        run: rsync -avz --delete .next/ public/ package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
