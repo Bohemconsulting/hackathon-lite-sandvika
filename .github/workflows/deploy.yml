@@ -31,7 +31,19 @@ jobs:
 
       - name: send project files
         run: rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" .next public package.json pnpm-lock.yaml pi@raspberrypi:~/bohem-consulting/hackathon-lite-sandvika
+        
       - name: install remote npm packages
         run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && /home/pi/.npm-global/bin/pnpm install'"
+
+      - name: deploy supabase key secret 
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo NEXT_PUBLIC_SUPABASE_ANON_KEY=$SUPABASE_KEY > .env.local'"
+        env:
+          SUPABASE_KEY: ${{NEXT_PUBLIC_SUPABASE_ANON_KEY}}}
+          
+      - name: deploy supabase url secret 
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo NEXT_PUBLIC_SUPABASE_URL=$SUPABASE_URL >> .env.local'"
+        env:
+          SUPABASE_URL: ${{NEXT_PUBLIC_SUPABASE_URL}}
+    
       - name: restart pm2
         run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c '/home/pi/.local/share/pnpm/pm2 restart hackathon-lite'"
