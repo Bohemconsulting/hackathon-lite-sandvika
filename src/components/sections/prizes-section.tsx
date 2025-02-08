@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export function PrizesSection() {
   return (
-    (<section className="flex flex-col items-center gap-2.5 p-5 text-center">
-      <h2 className="text-xs font-bold">Men hva med premiene?</h2>
+    <section className="flex flex-col items-center gap-2.5 p-5 text-center">
+      <h2 className="font-bold">Men hva med premiene?</h2>
       <div className="flex items-center">
-        <p className="text-xs">
+        <p className="text-sm">
           1. plass får gaming laptop til 25 000 kr <br /> Resten får også
           premier (?)
         </p>
@@ -16,9 +16,10 @@ export function PrizesSection() {
           alt={"Acer Predator Helios Neo 16"}
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
       </div>
-    </section>)
+    </section>
   );
 }
