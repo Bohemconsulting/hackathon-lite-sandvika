@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { HostSection } from "@/components/sections/host-section";
 import { InfoSection } from "@/components/sections/info-section";
 import { SponsorsSection } from "@/components/sections/sponsors-section";
+import { SummerySection } from "@/components/summery-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <div>
         <Navbar />
         <HeroSection />
+        <SummerySection />
         <HostSection />
         <InfoSection />
         <SponsorsSection />
