@@ -7,8 +7,8 @@ export type SummerySectionProps = {};
 export function SummerySection({}: SummerySectionProps) {
   return (
     <div className="flex h-[283.5px] flex-col items-center justify-center">
-      <h2 className="h-[15px] font-bold">KORT OPPSUMMERT</h2>
-      <div className="flex h-[208.5px] w-full justify-between px-[20px] py-[30px]">
+      <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
+      <div className="flex h-[268.5px] w-full justify-between px-[20px] pb-[30px]">
         <div className="flex h-[208.5px] w-[180px] flex-col justify-between text-left text-sm">
           <div className="flex items-center justify-between">
             <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white">
