@@ -1,9 +1,7 @@
 import { Clock, Laptop, MapPin, User } from "lucide-react";
 import Image from "next/image";
 
-export type SummarySectionProps = {};
-
-export function SummarySection({}: SummarySectionProps) {
+export function SummarySection() {
   return (
     <section className="flex h-[283.5px] flex-col items-center justify-center">
       <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
