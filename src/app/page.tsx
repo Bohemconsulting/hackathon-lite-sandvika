@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer/footer";
-import { HeroSection } from "@/components/hero-section";
 import { Navbar } from "@/components/navbar";
+import { HeroSection } from "@/components/sections/hero-section";
+import { SponsorsSection } from "@/components/sections/sponsors-section";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div>
         <Navbar />
         <HeroSection />
+        <SponsorsSection />
       </div>
       <Footer />
     </div>
