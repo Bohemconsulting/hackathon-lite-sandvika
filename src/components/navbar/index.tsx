@@ -5,11 +5,11 @@ import Link from "next/link";
 const links = [
   {
     text: "Info",
-    href: "",
+    href: "#info-section",
   },
   {
     text: "Påmelding",
-    href: "",
+    href: "#sign-up-form",
   },
 ];
 
@@ -18,7 +18,7 @@ export function Navbar() {
     <nav className="flex flex-row items-center justify-between bg-gray-800 p-4">
       <div className="flex flex-row items-center text-xl">
         <Image
-          src="/hls-logo.png"
+          src="/logos/hls-logo.png"
           width={18}
           height={18}
           alt="Hackathon Lite Sandvika logo"

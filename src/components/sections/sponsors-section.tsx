@@ -8,19 +8,19 @@ export function SponsorsSection() {
         <Image
           height={111}
           width={111}
-          src={"/args-logo.png"}
+          src={"/logos/args-logo.png"}
           alt={"Akademiet Realfagsgymnas Sandvika"}
         />
         <Image
           height={111}
           width={106}
-          src={"/hls-logo.png"}
+          src={"/logos/hls-logo.png"}
           alt={"Hackathon Lite Sandvika"}
         />
         <Image
           height={111}
           width={111}
-          src={"/erasmus-logo.jpg"}
+          src={"/logos/erasmus-logo.jpg"}
           alt={"Erasmus+"}
         />
       </div>
