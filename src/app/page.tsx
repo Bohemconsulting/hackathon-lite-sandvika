@@ -6,6 +6,7 @@ import { InfoSection } from "@/components/sections/info-section";
 import { PrizesSection } from "@/components/sections/prizes-section";
 import { SponsorsSection } from "@/components/sections/sponsors-section";
 import { SummarySection } from "@/components/sections/summary-section";
+import { SignUpForm } from "@/components/sign-up-form";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <HostSection />
         <InfoSection />
         <PrizesSection />
+        <SignUpForm />
         <SponsorsSection />
       </div>
       <Footer />

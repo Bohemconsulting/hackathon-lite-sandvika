@@ -26,8 +26,8 @@ export function Navbar({}: NavbarProps) {
           alt="Hackathon Lite Sandvika logo"
           className="mx-1"
         />
-        <h1 className="flex">
-          <span className="text-yellow uppercase">Hackathon</span>{" "}
+        <h1>
+          <span className="text-yellow uppercase">Hackathon</span>
           <span className="text-turquoise uppercase">Lite</span>
         </h1>
       </div>
