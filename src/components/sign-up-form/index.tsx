@@ -31,7 +31,7 @@ export function SignUpForm() {
   return (
     <Form {...form}>
       <form
-        id="sign-up-form"
+        id="påmelding"
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-5"
       >

@@ -24,7 +24,7 @@ export function HeroSection() {
           Bli med på vårt Hackathon i Sandvika 28. februar - 4. april
         </p>
         <Link
-          href="#sign-up-form"
+          href="#påmelding"
           className={cn(buttonVariants({ variant: "default" }), "mt-[22px]")}
         >
           Gå til påmelding

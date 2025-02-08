@@ -1,7 +1,7 @@
 export function InfoSection() {
   return (
     <section
-      id="info-section"
+      id="info"
       className="flex flex-col items-center gap-2.5 p-5 text-center"
     >
       <h2 className="text-xs font-bold">Mer om arrangementet</h2>
