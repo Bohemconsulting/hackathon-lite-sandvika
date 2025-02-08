@@ -5,7 +5,7 @@ export type SummarySectionProps = {};
 
 export function SummarySection({}: SummarySectionProps) {
   return (
-    <div className="flex h-[283.5px] flex-col items-center justify-center">
+    <section className="flex h-[283.5px] flex-col items-center justify-center">
       <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
       <div className="flex h-[268.5px] w-full justify-between px-[20px] pb-[30px]">
         <div className="flex h-[208.5px] w-[180px] flex-col justify-between text-left text-sm">
@@ -43,6 +43,6 @@ export function SummarySection({}: SummarySectionProps) {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
