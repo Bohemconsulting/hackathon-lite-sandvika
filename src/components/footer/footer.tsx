@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <div className="bg-foreground flex h-fit w-full items-center justify-between px-4 py-2.5">
+    <footer className="bg-foreground flex h-fit w-full items-center justify-between px-4 py-2.5">
       <div className="flex items-center gap-1.5">
         <span className="text-background text-sm">Nettside utviklet av</span>
         <Image
@@ -20,6 +20,6 @@ export function Footer() {
           alt="Finansiert av Den europeiske union"
         />
       </div>
-    </div>
+    </footer>
   );
 }
