@@ -44,6 +44,11 @@ jobs:
         run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo NEXT_PUBLIC_SUPABASE_URL=$SUPABASE_URL >> .env.local'"
         env:
           SUPABASE_URL: ${{secrets.NEXT_PUBLIC_SUPABASE_URL}}
-    
+      
+      - name: deploy supabase service role secret
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo SUPABASE_SERVICE_ROLE=$SUPABASE_SECRET >> .env.local'"
+        env:
+          SUPABASE_SECRET: ${{secrets.SUPABASE_SERVICE_ROLE}}
+
       - name: restart pm2
         run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c '/home/pi/.local/share/pnpm/pm2 restart hackathon-lite'"
