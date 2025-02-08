@@ -16,10 +16,10 @@ const links = [
 
 export function Navbar({}: NavbarProps) {
   return (
-    <nav className="bg-gray-800 flex flex-row justify-between p-4 items-center">
+    <nav className="flex flex-row items-center justify-between bg-gray-800 p-4">
       <div className="flex flex-row text-xl">
-        <span className="uppercase text-yellow">Hackathon</span>{" "}
-        <span className="uppercase text-turquoise">Lite</span>
+        <span className="text-yellow uppercase">Hackathon</span>{" "}
+        <span className="text-turquoise uppercase">Lite</span>
       </div>
       <div className="flex flex-row divide-x-2">
         {links.map((link) => (
