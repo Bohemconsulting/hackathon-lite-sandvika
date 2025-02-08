@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/sections/hero-section";
 import { HostSection } from "@/components/sections/host-section";
 import { InfoSection } from "@/components/sections/info-section";
+import { PrizesSection } from "@/components/sections/prizes-section";
 import { SponsorsSection } from "@/components/sections/sponsors-section";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <HeroSection />
         <HostSection />
         <InfoSection />
+        <PrizesSection />
         <SponsorsSection />
       </div>
       <Footer />
