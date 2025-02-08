@@ -14,12 +14,14 @@ export default function Home() {
       <div>
         <Navbar />
         <HeroSection />
-        <SummarySection />
-        <HostSection />
-        <InfoSection />
-        <PrizesSection />
-        <SignUpForm />
-        <SponsorsSection />
+        <div className="container mx-auto px-2">
+          <SummarySection />
+          <HostSection />
+          <InfoSection />
+          <PrizesSection />
+          <SignUpForm />
+          <SponsorsSection />
+        </div>
       </div>
       <Footer />
     </div>
