@@ -6,7 +6,7 @@ export function Footer() {
       <div className="flex items-center gap-1.5">
         <span className="text-background text-sm">Nettside utviklet av</span>
         <Image
-          src={"/bohemconsulting-logo.jpg"}
+          src={"/logos/bohemconsulting-logo.jpg"}
           width={36}
           height={36}
           alt="Bohemconsulting"
