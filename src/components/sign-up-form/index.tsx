@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useEventSignupMutation } from "./query";
@@ -28,7 +29,26 @@ export function SignUpForm() {
   });
 
   async function onSubmit(values: FormSchema) {
-    await mutateAsync(values);
+    const result = await mutateAsync({
+      name: values.name,
+      email: values.email,
+      phone_number: values.phoneNumber,
+    });
+
+    if (result.error != null) {
+      toast({
+        title: "Påmeldingen feilet",
+        description: "Noe gikk galt ved påmeldingen",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Påmelding registrert",
+        description: "Du er nå meldt på til Hackathon Lite Sandvika",
+      });
+    }
+
+    form.reset();
   }
 
   return (

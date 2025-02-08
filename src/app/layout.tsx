@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import { ReactQueryProvider } from "@/providers/react-query-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -29,7 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth antialiased`}
         style={{ scrollBehavior: "smooth" }}
       >
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <main>{children}</main>
+          <Toaster />
+        </ReactQueryProvider>
       </body>
     </html>
   );
