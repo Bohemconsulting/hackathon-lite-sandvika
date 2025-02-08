@@ -1,6 +1,9 @@
 export function InfoSection() {
   return (
-    <section className="flex flex-col items-center gap-2.5 p-5 text-center">
+    <section
+      id="info-section"
+      className="flex flex-col items-center gap-2.5 p-5 text-center"
+    >
       <h2 className="text-xs font-bold">Mer om arrangementet</h2>
       <p className="text-xs">
         Velkommen til Hackathon Lite Sandvika – et lavterskel hackathon for

@@ -5,11 +5,11 @@ import Link from "next/link";
 const links = [
   {
     text: "Info",
-    href: "",
+    href: "#info-section",
   },
   {
     text: "Påmelding",
-    href: "",
+    href: "#sign-up-form",
   },
 ];
 
