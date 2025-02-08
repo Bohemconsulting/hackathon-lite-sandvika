@@ -1,17 +1,19 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="relative h-[266px]">
+    (<div className="relative h-[266px]">
       <div className="w-full">
         <Image
           src="/hero-cover.png"
           alt="Hero image"
-          layout="fill"
-          objectFit="cover"
           className="z-0 opacity-69"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
       </div>
       <div className="absolute flex h-full w-full flex-col items-center">
         <div className="h-[124px]" />
@@ -25,6 +27,6 @@ export function HeroSection() {
           *psst* vi har premier på 25 000 kr +
         </p>
       </div>
-    </div>
+    </div>)
   );
 }

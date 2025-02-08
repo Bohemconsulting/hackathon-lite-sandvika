@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 // TODO: Update hrefs
@@ -15,7 +15,7 @@ const links = [
 
 export function Navbar() {
   return (
-    <nav className="bg-gray-800 p-4">
+    (<nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex flex-row items-center justify-between px-2">
         <div className="flex flex-row items-center text-xl">
           <Image
@@ -24,7 +24,10 @@ export function Navbar() {
             height={18}
             alt="Hackathon Lite Sandvika logo"
             className="mx-1"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <h1>
             <span className="text-yellow uppercase">Hackathon</span>
             <span className="text-turquoise uppercase">Lite</span>
@@ -42,6 +45,6 @@ export function Navbar() {
           ))}
         </div>
       </div>
-    </nav>
+    </nav>)
   );
 }

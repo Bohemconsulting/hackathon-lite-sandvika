@@ -1,9 +1,9 @@
 import { Clock, Laptop, MapPin, User } from "lucide-react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export function SummarySection() {
   return (
-    <section className="flex h-[283.5px] flex-col items-center justify-center">
+    (<section className="flex h-[283.5px] flex-col items-center justify-center">
       <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
       <div className="flex h-[268.5px] w-full justify-between px-[20px] pb-[30px]">
         <div className="flex h-[208.5px] w-[180px] flex-col justify-between text-left text-sm">
@@ -36,11 +36,13 @@ export function SummarySection() {
           <Image
             src="/args-building.png"
             alt="Args hovedbygning"
-            layout="fill"
-            objectFit="cover"
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
         </div>
       </div>
-    </section>
+    </section>)
   );
 }

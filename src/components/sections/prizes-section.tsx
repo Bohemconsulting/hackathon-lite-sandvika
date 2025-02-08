@@ -1,8 +1,8 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export function PrizesSection() {
   return (
-    <section className="flex flex-col items-center gap-2.5 p-5 text-center">
+    (<section className="flex flex-col items-center gap-2.5 p-5 text-center">
       <h2 className="text-xs font-bold">Men hva med premiene?</h2>
       <div className="flex items-center">
         <p className="text-xs">
@@ -14,8 +14,11 @@ export function PrizesSection() {
           width={102}
           height={102}
           alt={"Acer Predator Helios Neo 16"}
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
-    </section>
+    </section>)
   );
 }
