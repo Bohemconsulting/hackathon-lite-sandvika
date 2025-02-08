@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function SponsorsSection() {
   return (
-    (<section className="flex flex-col items-center gap-2.5 p-5">
-      <h2 className="text-xs font-bold">Dette arrangementet er skapt av</h2>
+    <section className="flex flex-col items-center gap-2.5 p-5">
+      <h2 className="font-bold">Dette arrangementet er skapt av</h2>
       <div className="flex gap-2.5">
         <Image
           height={111}
@@ -12,8 +12,9 @@ export function SponsorsSection() {
           alt={"Akademiet Realfagsgymnas Sandvika"}
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
         <Image
           height={111}
           width={106}
@@ -21,8 +22,9 @@ export function SponsorsSection() {
           alt={"Hackathon Lite Sandvika"}
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
         <Image
           height={111}
           width={111}
@@ -30,9 +32,10 @@ export function SponsorsSection() {
           alt={"Erasmus+"}
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
       </div>
-    </section>)
+    </section>
   );
 }
