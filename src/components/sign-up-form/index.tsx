@@ -1,6 +1,5 @@
 "use client";
 
-import { createEventSignup } from "@/app/actions";
 import { formSchema, FormSchema } from "@/components/sign-up-form/schema";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,8 +13,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useEventSignupMutation } from "./query";
 
 export function SignUpForm() {
+  const { mutateAsync, isPending } = useEventSignupMutation();
+
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -26,13 +28,7 @@ export function SignUpForm() {
   });
 
   async function onSubmit(values: FormSchema) {
-    const { data, error } = await createEventSignup({
-      name: values.name,
-      email: values.email,
-      phone_number: values.phoneNumber,
-    });
-
-    console.log(data, error);
+    await mutateAsync(values);
   }
 
   return (
@@ -84,7 +80,9 @@ export function SignUpForm() {
           )}
         />
 
-        <Button type="submit">Meld deg på</Button>
+        <Button type="submit" disabled={isPending}>
+          Meld deg på
+        </Button>
       </form>
     </Form>
   );
