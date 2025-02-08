@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export type NavbarProps = {};
-
 // TODO: Update hrefs
 const links = [
   {
@@ -15,7 +13,7 @@ const links = [
   },
 ];
 
-export function Navbar({}: NavbarProps) {
+export function Navbar() {
   return (
     <nav className="flex flex-row items-center justify-between bg-gray-800 p-4">
       <div className="flex flex-row items-center text-xl">

@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export type HeroSectionProps = {};
-
-export function HeroSection({}: HeroSectionProps) {
+export function HeroSection() {
   return (
     <div className="relative h-[266px]">
       <div className="w-full">

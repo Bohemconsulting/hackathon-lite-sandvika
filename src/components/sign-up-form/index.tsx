@@ -14,9 +14,7 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-export type SignUpFormProps = {};
-
-export function SignUpForm({}: SignUpFormProps) {
+export function SignUpForm() {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {

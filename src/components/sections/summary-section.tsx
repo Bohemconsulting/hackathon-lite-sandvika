@@ -1,12 +1,9 @@
-import React from "react";
+import { Clock, Laptop, MapPin, User } from "lucide-react";
 import Image from "next/image";
-import { MapPin, Laptop, Clock, User } from "lucide-react";
 
-export type SummerySectionProps = {};
-
-export function SummerySection({}: SummerySectionProps) {
+export function SummarySection() {
   return (
-    <div className="flex h-[283.5px] flex-col items-center justify-center">
+    <section className="flex h-[283.5px] flex-col items-center justify-center">
       <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
       <div className="flex h-[268.5px] w-full justify-between px-[20px] pb-[30px]">
         <div className="flex h-[208.5px] w-[180px] flex-col justify-between text-left text-sm">
@@ -44,6 +41,6 @@ export function SummerySection({}: SummerySectionProps) {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
