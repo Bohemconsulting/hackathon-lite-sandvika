@@ -1,5 +1,6 @@
 "use client";
 
+import { createEventSignup } from "@/app/actions";
 import { formSchema, FormSchema } from "@/components/sign-up-form/schema";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,8 +25,14 @@ export function SignUpForm() {
     },
   });
 
-  function onSubmit(values: FormSchema) {
-    console.log(values);
+  async function onSubmit(values: FormSchema) {
+    const { data, error } = await createEventSignup({
+      name: values.name,
+      email: values.email,
+      phone_number: values.phoneNumber,
+    });
+
+    console.log(data, error);
   }
 
   return (
