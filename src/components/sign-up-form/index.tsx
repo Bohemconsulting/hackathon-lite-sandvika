@@ -11,10 +11,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useEventSignupMutation } from "./query";
 
 export function SignUpForm() {
+  const { mutateAsync, isPending } = useEventSignupMutation();
+
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -24,14 +28,33 @@ export function SignUpForm() {
     },
   });
 
-  function onSubmit(values: FormSchema) {
-    console.log(values);
+  async function onSubmit(values: FormSchema) {
+    const result = await mutateAsync({
+      name: values.name,
+      email: values.email,
+      phone_number: values.phoneNumber,
+    });
+
+    if (result.error != null) {
+      toast({
+        title: "Påmeldingen feilet",
+        description: "Noe gikk galt ved påmeldingen",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Påmelding registrert",
+        description: "Du er nå meldt på til Hackathon Lite Sandvika",
+      });
+    }
+
+    form.reset();
   }
 
   return (
     <Form {...form}>
       <form
-        id="sign-up-form"
+        id="påmelding"
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-5"
       >
@@ -77,7 +100,9 @@ export function SignUpForm() {
           )}
         />
 
-        <Button type="submit">Meld deg på</Button>
+        <Button type="submit" disabled={isPending}>
+          Meld deg på
+        </Button>
       </form>
     </Form>
   );
