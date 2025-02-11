@@ -1,48 +1,87 @@
+import { cn } from "@/lib/utils";
 import { Clock, Laptop, MapPin, User } from "lucide-react";
 import Image from "next/image";
 
-export function SummarySection() {
+type TitleComponentProps = { icon: React.ReactNode; title: string };
+
+export function TitleComponent({ icon, title }: TitleComponentProps) {
   return (
-    (<section className="flex h-[283.5px] flex-col items-center justify-center">
-      <h2 className="h-[55px] py-[20px] font-bold">KORT OPPSUMMERT</h2>
-      <div className="flex h-[268.5px] w-full justify-between px-[20px] pb-[30px]">
-        <div className="flex h-[208.5px] w-[180px] flex-col justify-between text-left text-sm">
-          <div className="flex items-center justify-between">
-            <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white">
-              <MapPin size={24} color="black" />
-            </div>
-            <p className="w-[137px]">Malmskriverveien 16, 1337 Sandvika</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white">
-              <Clock size={24} color="black" />
-            </div>
-            <p className="w-[137px]">28. februar - 28. mars, hver fredag</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white">
-              <Laptop size={24} color="black" />
-            </div>
-            <p className="w-[137px]">Proggekonkurranse med mentorer</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white">
-              <User size={24} color="black" />
-            </div>
-            <p className="w-[137px]">Arrangement for ungdom (13 - 20 år)</p>
-          </div>
+    <div>
+      <div className="flex items-center gap-2 border-b-2 border-b-neutral-300 p-2">
+        <div className="bg-yellow flex h-[24px] w-[24px] items-center justify-center rounded-full text-gray-800">
+          {icon}
         </div>
-        <div className="relative h-[208.5px] w-[139px]">
-          <Image
-            src="/args-building.png"
-            alt="Args hovedbygning"
-            fill
-            sizes="100vw"
-            style={{
-              objectFit: "cover"
-            }} />
-        </div>
+        <h2 className="text-left font-bold">{title}</h2>
       </div>
-    </section>)
+    </div>
+  );
+}
+
+export function SummarySection() {
+  const sections = [
+    {
+      header: "Hvor?",
+      text: "Hackathon Lite Sandvika holdes på det nye Akademiet bygget i Sandvika ved Sandvika bussterminal. Addressen er Malmskriverveien 16, 1337 Sandvika",
+      icon: <MapPin size={16} />,
+      image: {
+        src: "/args-building.png",
+        alt: "Args hovedbygning",
+      },
+    },
+    {
+      header: "Når?",
+      text: "Arrengmenetet holdes hver fredag fra 28. februar - 4. april",
+      icon: <Clock size={16} />,
+      image: {
+        src: "/calander.png",
+        alt: "Kalender med datoer for arrengemenetet markert",
+      },
+    },
+    {
+      header: "Hva?",
+      text: "Hackathon Lite Sandvika er en proggrammeringskonkurranse med mentorer. Det vil være premier for de beste lagene på over 25.000kr.",
+      icon: <Clock size={16} />,
+      image: {
+        src: "/mentor.png",
+        alt: "Mentor som veileder deltakere",
+      },
+    },
+    {
+      header: "Hvem?",
+      text: "Arrangementet er laget for ungdom (13 - 20 år). Er du over 20 år kan du melde deg på som mentor eller hjelpe til som frivillig uten å delta for premiene.",
+      icon: <Clock size={16} />,
+      image: {
+        src: "/student.png",
+        alt: "Bilde av mulig deltaker",
+      },
+    },
+  ];
+
+  return (
+    <section className="mx-auto my-10 flex max-w-4xl flex-col gap-10 lg:my-20 lg:gap-20">
+      {sections.map((section, idx) => (
+        <div
+          key={section.header}
+          className="flex flex-col gap-10 md:flex-row md:even:flex-row-reverse"
+        >
+          <div className="flex flex-1 flex-col">
+            <div>
+              <TitleComponent icon={section.icon} title={section.header} />
+            </div>
+            <p className={cn("flex-1 p-2", idx % 2 == 1 && "")}>
+              {section.text}
+            </p>
+          </div>
+          <div className="relative aspect-square flex-1">
+            <Image
+              src={section.image.src}
+              alt={section.image.alt}
+              fill
+              className="aspect-square object-cover"
+            />
+          </div>
+        </div>
+      ))}
+    </section>
   );
 }

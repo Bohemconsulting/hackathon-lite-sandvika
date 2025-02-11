@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <Navbar />
         <HeroSection />
-        <div className="container mx-auto px-2">
+        <div className="mx-auto max-w-4xl px-2">
           <SummarySection />
           <HostSection />
           <InfoSection />

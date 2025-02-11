@@ -20,7 +20,7 @@ export function HeroSection() {
       </div>
       <div className="absolute flex h-full w-full flex-col items-center">
         <div className="h-[124px]" />
-        <p className="size-28 h-[44px] w-[353px] text-center font-bold text-white">
+        <p className="size-28 h-[44px] w-[353px] text-center font-bold text-white md:text-xl">
           Bli med på vårt Hackathon i Sandvika 28. februar - 4. april
         </p>
         <Link
@@ -29,7 +29,7 @@ export function HeroSection() {
         >
           Gå til påmelding
         </Link>
-        <p className="mt-[9px] size-2 h-[15px] w-[250px] text-gray-400 italic">
+        <p className="mt-[9px] size-2 h-[15px] w-[250px] text-nowrap text-gray-300 italic">
           *psst* vi har premier på 25 000 kr +
         </p>
       </div>
