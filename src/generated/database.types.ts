@@ -11,31 +11,46 @@ export type Database = {
     Tables: {
       EventSignup: {
         Row: {
+          age: number
           confirmed: boolean | null
           created_at: string
-          email: string | null
+          email: string
+          gender: Database["public"]["Enums"]["gender"]
+          hoodie_size: Database["public"]["Enums"]["clothes_size"]
           id: number
-          name: string | null
-          phone_number: string | null
-          surname: string | null
+          mail_token: string | null
+          name: string
+          phone_number: string
+          postal_code: number
+          programming_competence: Database["public"]["Enums"]["programming_competence"]
         }
         Insert: {
+          age: number
           confirmed?: boolean | null
           created_at?: string
-          email?: string | null
+          email: string
+          gender: Database["public"]["Enums"]["gender"]
+          hoodie_size: Database["public"]["Enums"]["clothes_size"]
           id?: number
-          name?: string | null
-          phone_number?: string | null
-          surname?: string | null
+          mail_token?: string | null
+          name: string
+          phone_number: string
+          postal_code: number
+          programming_competence: Database["public"]["Enums"]["programming_competence"]
         }
         Update: {
+          age?: number
           confirmed?: boolean | null
           created_at?: string
-          email?: string | null
+          email?: string
+          gender?: Database["public"]["Enums"]["gender"]
+          hoodie_size?: Database["public"]["Enums"]["clothes_size"]
           id?: number
-          name?: string | null
-          phone_number?: string | null
-          surname?: string | null
+          mail_token?: string | null
+          name?: string
+          phone_number?: string
+          postal_code?: number
+          programming_competence?: Database["public"]["Enums"]["programming_competence"]
         }
         Relationships: []
       }
@@ -47,7 +62,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      clothes_size:
+        | "small"
+        | "medium"
+        | "large"
+        | "extra_large"
+        | "extra_extra_large"
+      gender: "male" | "female" | "other"
+      programming_competence: "beginner" | "experienced"
     }
     CompositeTypes: {
       [_ in never]: never
