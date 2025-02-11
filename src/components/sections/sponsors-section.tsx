@@ -3,13 +3,16 @@ import Image from "next/image";
 export function SponsorsSection() {
   return (
     <section className="flex flex-col items-center gap-2.5 p-5">
-      <h2 className="font-bold">Dette arrangementet er skapt av</h2>
-      <div className="flex gap-2.5">
+      <h2 className="text-center text-xl font-bold">
+        Dette arrangementet er gjort mulig av:
+      </h2>
+      <div className="flex gap-4.5">
         <Image
           height={111}
-          width={111}
-          src={"/logos/args-logo.png"}
-          alt={"Akademiet Realfagsgymnas Sandvika"}
+          width={114}
+          className="bg-white"
+          src={"/logos/nrg-logo.png"}
+          alt={"Norges realfagsgymnas Sandvika"}
           style={{
             maxWidth: "100%",
             height: "auto",

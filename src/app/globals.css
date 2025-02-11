@@ -13,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-yellow: #ffd700;
   --color-turquoise: #00e2c7;
+  --font-sans: var(--font-geist-sans);
 }
 
 /*

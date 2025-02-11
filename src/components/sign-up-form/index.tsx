@@ -35,7 +35,7 @@ export function SignUpForm() {
       phone_number: values.phoneNumber,
     });
 
-    if (result.error != null) {
+    if (result?.error != null) {
       toast({
         title: "Påmeldingen feilet",
         description: "Noe gikk galt ved påmeldingen",
@@ -52,58 +52,61 @@ export function SignUpForm() {
   }
 
   return (
-    <Form {...form}>
-      <form
-        id="påmelding"
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-5"
-      >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Navn</FormLabel>
-              <FormControl>
-                <Input placeholder="Ola Nordmann" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <section className="flex flex-col items-center p-5">
+      <h2 className="text-xl font-bold">Påmelding</h2>
+      <Form {...form}>
+        <form
+          id="påmelding"
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-4 p-5"
+        >
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Navn</FormLabel>
+                <FormControl>
+                  <Input placeholder="Ola Nordmann" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="ola.nordmann@gmail.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="ola.nordmann@gmail.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="phoneNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Telefonnummer</FormLabel>
-              <FormControl>
-                <Input placeholder="XXXXXXXX" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="phoneNumber"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Telefonnummer</FormLabel>
+                <FormControl>
+                  <Input placeholder="XXXXXXXX" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <Button type="submit" disabled={isPending}>
-          Meld deg på
-        </Button>
-      </form>
-    </Form>
+          <Button type="submit" disabled={isPending}>
+            Meld deg på
+          </Button>
+        </form>
+      </Form>
+    </section>
   );
 }
