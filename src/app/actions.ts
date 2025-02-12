@@ -13,6 +13,7 @@ const formSchema = z.object({
   postal_code: z.number(),
   programming_competence: z.enum(["beginner", "experienced"]),
   hoodie_size: z.enum([
+    "unwanted",
     "small",
     "medium",
     "large",

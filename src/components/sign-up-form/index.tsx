@@ -66,7 +66,10 @@ export function SignUpForm() {
     <section className="flex flex-col items-center p-5" id="påmelding">
       <h2 className="text-xl font-bold">Påmelding</h2>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-5">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col gap-4 space-y-4 p-5"
+        >
           <FormField
             control={form.control}
             name="name"
@@ -217,6 +220,14 @@ export function SignUpForm() {
                     defaultValue={field.value}
                     className="flex flex-col space-y-1"
                   >
+                    <FormItem className="flex items-center space-y-0 space-x-3">
+                      <FormControl>
+                        <RadioGroupItem value="unwanted" />
+                      </FormControl>
+                      <FormLabel className="font-normal">
+                        Ønsker ikke hettegenser
+                      </FormLabel>
+                    </FormItem>
                     <FormItem className="flex items-center space-y-0 space-x-3">
                       <FormControl>
                         <RadioGroupItem value="small" />
