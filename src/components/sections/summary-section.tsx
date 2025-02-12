@@ -30,7 +30,7 @@ export function SummarySection() {
     },
     {
       header: "Når?",
-      text: "Arrengmenetet holdes hver fredag fra 28. februar - 4. april",
+      text: "Arrangementet holdes hver fredag fra 28. februar - 4. april",
       icon: <Clock size={16} />,
       image: {
         src: "/calander.png",
