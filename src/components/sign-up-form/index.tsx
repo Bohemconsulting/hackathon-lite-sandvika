@@ -55,7 +55,8 @@ export function SignUpForm() {
     } else {
       toast({
         title: "Påmelding registrert",
-        description: "Du er nå meldt på til Hackathon Lite Sandvika",
+        description:
+          "Du er nå meldt på til Hackathon Lite Sandvika. Vennligst sjekk eposten din for å bekrefte deltakelse.",
       });
     }
 
