@@ -3,8 +3,8 @@ import Image from "next/image";
 export function SponsorsSection() {
   return (
     <section className="flex flex-col items-center gap-2.5 p-5">
-      <h2 className="text-center text-xl font-bold">
-        Dette arrangementet er gjort mulig av:
+      <h2 className="mb-4 text-center text-xl font-bold">
+        Dette arrangementet er muliggjort av:
       </h2>
       <div className="flex gap-4.5">
         <div>
