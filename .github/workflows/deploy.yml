@@ -51,7 +51,7 @@ jobs:
           SUPABASE_SECRET: ${{secrets.SUPABASE_SERVICE_ROLE}}
 
       - name: deploy aws access key id
-        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo AWS_ACCESS_KEY_ID=$AWS_ACCES_KEY_ID >> .env.local'"
+        run: ssh -o StrictHostKeyChecking=no pi@raspberrypi "bash -c 'cd ~/bohem-consulting/hackathon-lite-sandvika && echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID >> .env.local'"
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           
