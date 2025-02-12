@@ -24,11 +24,7 @@ const formSchema = z.object({
 export async function createEventSignup(
   eventSignup: TablesInsert<"EventSignup">,
 ) {
-  console.log(eventSignup);
-
   const result = formSchema.safeParse(eventSignup);
-
-  console.log(result.error);
 
   if (result.error) {
     return;

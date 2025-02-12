@@ -46,8 +46,6 @@ export function SignUpForm() {
       hoodie_size: values.hoodieSize,
     });
 
-    console.log(result);
-
     if (result?.error != null) {
       toast({
         title: "Påmeldingen feilet",
