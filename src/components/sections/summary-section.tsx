@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Clock, Laptop, MapPin, User } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 
 type TitleComponentProps = { icon: React.ReactNode; title: string };
