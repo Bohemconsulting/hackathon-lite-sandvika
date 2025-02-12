@@ -1,19 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// TODO: Update hrefs
-const links = [
-  {
-    text: "Info",
-    href: "#info",
-  },
-  {
-    text: "Påmelding",
-    href: "#påmelding",
-  },
-];
+type NavbarProps = {
+  links: {
+    text: string;
+    href: string;
+  }[];
+};
 
-export function Navbar() {
+export function Navbar({ links }: NavbarProps) {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="mx-auto flex max-w-4xl flex-row items-center justify-between px-2">
@@ -30,7 +25,7 @@ export function Navbar() {
             }}
           />
           <h1>
-            <Link href="">
+            <Link href="/">
               <span className="text-yellow uppercase">Hackathon</span>
               <span className="text-turquoise uppercase">Lite</span>
             </Link>

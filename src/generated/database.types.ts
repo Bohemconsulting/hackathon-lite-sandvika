@@ -68,6 +68,7 @@ export type Database = {
         | "large"
         | "extra_large"
         | "extra_extra_large"
+        | "unwanted"
       gender: "male" | "female" | "other"
       programming_competence: "beginner" | "experienced"
     }

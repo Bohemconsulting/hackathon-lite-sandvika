@@ -22,8 +22,8 @@ export function PrizesSection() {
                   height: "auto",
                 }}
               />
-              Gaming laptop til{" "}
-              <span className="font-bold text-nowrap">25 000 kr</span>
+              Gaming laptop til over{" "}
+              <span className="font-bold text-nowrap">20 000 kr</span>
             </CardContent>
           </Card>
         </li>

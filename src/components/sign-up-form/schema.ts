@@ -13,7 +13,14 @@ export const formSchema = z.object({
     required_error: "Du må velge et programmeringsnivå",
   }),
   hoodieSize: z.enum(
-    ["small", "medium", "large", "extra_large", "extra_extra_large"],
+    [
+      "unwanted",
+      "small",
+      "medium",
+      "large",
+      "extra_large",
+      "extra_extra_large",
+    ],
     { required_error: "Du må velge en hettegenserstørrrelse" },
   ),
 });
