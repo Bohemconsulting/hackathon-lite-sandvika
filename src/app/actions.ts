@@ -5,14 +5,14 @@ import { createClient } from "@/lib/supabase/server";
 import { v6 as uuidv6 } from "uuid";
 import { z } from "zod";
 
-var aws = require("aws-sdk");
-aws.config.update({
-  region: "eu-north-1",
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET,
-});
+// var aws = require("aws-sdk");
+// aws.config.update({
+//   region: "eu-north-1",
+//   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: process.env.AWS_SECRET,
+// });
 
-var ses = new aws.SES({ region: "eu-north-1" });
+// var ses = new aws.SES({ region: "eu-north-1" });
 
 const formSchema = z.object({
   name: z.string().min(1),
