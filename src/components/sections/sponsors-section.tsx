@@ -3,41 +3,35 @@ import Image from "next/image";
 export function SponsorsSection() {
   return (
     <section className="flex flex-col items-center gap-2.5 p-5">
-      <h2 className="text-center text-xl font-bold">
-        Dette arrangementet er gjort mulig av:
+      <h2 className="mb-4 text-center text-xl font-bold">
+        Dette arrangementet er muliggjort av:
       </h2>
       <div className="flex gap-4.5">
-        <Image
-          height={111}
-          width={114}
-          className="bg-white"
-          src={"/logos/nrg-logo.png"}
-          alt={"Norges realfagsgymnas Sandvika"}
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        />
-        <Image
-          height={111}
-          width={106}
-          src={"/logos/hls-logo.png"}
-          alt={"Hackathon Lite Sandvika"}
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        />
-        <Image
-          height={111}
-          width={111}
-          src={"/logos/erasmus-logo.jpg"}
-          alt={"Erasmus+"}
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        />
+        <div>
+          <Image
+            height={224}
+            width={228}
+            src={"/logos/nrg-logo.png"}
+            alt={"Norges Realfagsgymnas Sandvika"}
+            className="bg-white"
+          />
+        </div>
+        <div>
+          <Image
+            height={224}
+            width={212}
+            src={"/logos/hls-logo.png"}
+            alt={"Hackathon Lite Sandvika"}
+          />
+        </div>
+        <div>
+          <Image
+            height={224}
+            width={222}
+            src={"/logos/erasmus-logo.jpg"}
+            alt={"Erasmus+"}
+          />
+        </div>
       </div>
     </section>
   );

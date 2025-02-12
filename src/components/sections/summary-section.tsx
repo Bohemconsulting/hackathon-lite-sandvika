@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Clock, Laptop, MapPin, User } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 
 type TitleComponentProps = { icon: React.ReactNode; title: string };
@@ -30,7 +30,7 @@ export function SummarySection() {
     },
     {
       header: "Når?",
-      text: "Arrengmenetet holdes hver fredag fra 28. februar - 4. april",
+      text: "Arrangementet holdes hver fredag fra 28. februar - 4. april",
       icon: <Clock size={16} />,
       image: {
         src: "/calander.png",

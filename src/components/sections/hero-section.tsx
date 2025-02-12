@@ -5,7 +5,7 @@ import { buttonVariants } from "../ui/button";
 
 export function HeroSection() {
   return (
-    <div className="relative h-[266px]">
+    <div className="relative h-[266px] md:h-[532px]">
       <div className="w-full">
         <Image
           src="/hero-cover.png"
@@ -18,18 +18,17 @@ export function HeroSection() {
           }}
         />
       </div>
-      <div className="absolute flex h-full w-full flex-col items-center">
-        <div className="h-[124px]" />
-        <p className="size-28 h-[44px] w-[353px] text-center font-bold text-white md:text-xl">
+      <div className="absolute flex h-full w-full flex-col items-center justify-end">
+        <p className="max-w-4xl px-16 text-center font-bold text-white md:text-4xl">
           Bli med på vårt Hackathon i Sandvika 28. februar - 4. april
         </p>
         <Link
           href="#påmelding"
-          className={cn(buttonVariants({ variant: "default" }), "mt-[22px]")}
+          className={cn(buttonVariants({ variant: "default" }), "mt-3 md:mt-6")}
         >
           Gå til påmelding
         </Link>
-        <p className="mt-[9px] size-2 h-[15px] w-[250px] text-nowrap text-gray-300 italic">
+        <p className="mt-3 h-[30px] w-[250px] text-nowrap text-gray-300 italic md:mt-6">
           *psst* vi har premier på 25 000 kr +
         </p>
       </div>
