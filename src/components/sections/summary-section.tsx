@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Clock, MapPin } from "lucide-react";
+import { Clock, Laptop, MapPin, User } from "lucide-react";
 import Image from "next/image";
 
 type TitleComponentProps = { icon: React.ReactNode; title: string };
@@ -39,8 +39,8 @@ export function SummarySection() {
     },
     {
       header: "Hva?",
-      text: "Hackathon Lite Sandvika er en proggrammeringskonkurranse med mentorer. Det vil være premier for de beste lagene på over 25.000kr.",
-      icon: <Clock size={16} />,
+      text: "Hackathon Lite Sandvika er en programmeringskonkurranse med mentorer. Det vil være premier for de beste lagene på over 20 000kr.",
+      icon: <Laptop size={16} />,
       image: {
         src: "/mentor.png",
         alt: "Mentor som veileder deltakere",
@@ -48,8 +48,17 @@ export function SummarySection() {
     },
     {
       header: "Hvem?",
-      text: "Arrangementet er laget for ungdom (13 - 20 år). Er du over 20 år kan du melde deg på som mentor eller hjelpe til som frivillig uten å delta for premiene.",
-      icon: <Clock size={16} />,
+      text: (
+        <span>
+          Arrangementet er laget for ungdom (13 - 20 år). Er du over 20 år og
+          erfaren med programmering kan du gjerne ta kontakt med oss på{" "}
+          <a href="mailto:hackathonlite.sandvika@gmail.com" target="_blank">
+            hackathonlite.sandvika@gmail.com
+          </a>{" "}
+          om mentorjobb
+        </span>
+      ),
+      icon: <User size={16} />,
       image: {
         src: "/student.png",
         alt: "Bilde av mulig deltaker",

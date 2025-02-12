@@ -29,7 +29,7 @@ export function HeroSection() {
           Gå til påmelding
         </Link>
         <p className="mt-3 h-[30px] w-[250px] text-nowrap text-gray-300 italic md:mt-6">
-          *psst* vi har premier på 25 000 kr +
+          *psst* vi har premier på 20 000 kr +
         </p>
       </div>
     </div>
