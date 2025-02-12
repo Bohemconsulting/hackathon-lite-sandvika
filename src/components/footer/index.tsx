@@ -1,4 +1,6 @@
+import { SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export function Footer() {
   return (
@@ -33,6 +35,25 @@ export function Footer() {
             }}
           />
         </div>
+      </div>
+      <div className="mx-auto my-2 flex max-w-4xl justify-center gap-2">
+        <span className="text-background">Våre socials:</span>
+        <Button asChild variant="link" size="icon" className="size-6">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UC2XlV6t46QsHRJ69RBSMnCw"
+          >
+            <SiYoutube color="000000" size={48} className="size-6" />
+          </a>
+        </Button>
+        <Button asChild variant="link" size="icon" className="size-6">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/hackathon_lite_sandvika"
+          >
+            <SiInstagram color="000000" size={48} className="size-6" />
+          </a>
+        </Button>
       </div>
     </footer>
   );
