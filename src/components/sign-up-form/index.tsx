@@ -63,14 +63,10 @@ export function SignUpForm() {
   }
 
   return (
-    <section className="flex flex-col items-center p-5">
+    <section className="flex flex-col items-center p-5" id="påmelding">
       <h2 className="text-xl font-bold">Påmelding</h2>
       <Form {...form}>
-        <form
-          id="påmelding"
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-4 p-5"
-        >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-5">
           <FormField
             control={form.control}
             name="name"
