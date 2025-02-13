@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { GoogleTagManager } from "@next/third-parties/google";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no" className="scroll-smooth">
+      <GoogleTagManager gtmId="GTM-57HX72VR" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
         style={{ scrollBehavior: "smooth" }}
