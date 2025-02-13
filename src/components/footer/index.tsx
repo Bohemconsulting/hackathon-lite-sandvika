@@ -1,4 +1,5 @@
 import { SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 
@@ -36,24 +37,34 @@ export function Footer() {
           />
         </div>
       </div>
-      <div className="mx-auto my-2 flex max-w-4xl justify-center gap-2">
-        <span className="text-background">Våre socials:</span>
-        <Button asChild variant="link" size="icon" className="size-6">
-          <a
-            target="_blank"
-            href="https://www.youtube.com/channel/UC2XlV6t46QsHRJ69RBSMnCw"
-          >
-            <SiYoutube color="000000" size={48} className="size-6" />
-          </a>
-        </Button>
-        <Button asChild variant="link" size="icon" className="size-6">
-          <a
-            target="_blank"
-            href="https://www.instagram.com/hackathon_lite_sandvika"
-          >
-            <SiInstagram color="000000" size={48} className="size-6" />
-          </a>
-        </Button>
+      <div className="mx-auto my-2 flex max-w-4xl justify-center gap-8">
+        <div className="flex items-center gap-2">
+          <span className="text-background">Våre socials:</span>
+          <Button asChild variant="link" size="icon" className="size-6">
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UC2XlV6t46QsHRJ69RBSMnCw"
+            >
+              <SiYoutube color="000000" size={48} className="size-6" />
+            </a>
+          </Button>
+          <Button asChild variant="link" size="icon" className="size-6">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/hackathon_lite_sandvika"
+            >
+              <SiInstagram color="000000" size={48} className="size-6" />
+            </a>
+          </Button>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-background">Ta kontakt:</span>
+          <Button asChild variant="link" size="icon" className="size-6">
+            <a target="_blank" href="mailto:hackathonlite.sandvika@gmail.com">
+              <Mail color="black" className="size-6" />
+            </a>
+          </Button>
+        </div>
       </div>
     </footer>
   );
