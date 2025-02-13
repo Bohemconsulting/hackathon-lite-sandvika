@@ -35,6 +35,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tables } from "@/generated/database.types";
+import { keepOpen } from "@/lib/utils";
 
 export const columns: ColumnDef<Tables<"EventSignup">>[] = [
   {
@@ -259,6 +260,7 @@ export function UsersTable({ data }: UsersTableProps) {
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
                     }
+                    onSelect={keepOpen}
                   >
                     {column.id}
                   </DropdownMenuCheckboxItem>
