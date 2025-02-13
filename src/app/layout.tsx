@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no" className="scroll-smooth">
-      <GoogleTagManager gtmId="GTM-57HX72VR" />
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID!} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
         style={{ scrollBehavior: "smooth" }}
