@@ -71,200 +71,208 @@ export function SignUpForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col gap-4 space-y-4 p-5"
         >
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Navn</FormLabel>
-                <FormControl>
-                  <Input placeholder="Ola Nordmann" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="flex flex-col gap-4 md:flex-row md:gap-28 md:p-5">
+            <div className="flex flex-col gap-4">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Navn</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Ola Nordmann" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="ola.nordmann@gmail.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="ola.nordmann@gmail.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="phoneNumber"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Telefonnummer</FormLabel>
-                <FormControl>
-                  <Input placeholder="XXXXXXXX" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Telefonnummer</FormLabel>
+                    <FormControl>
+                      <Input placeholder="XXXXXXXX" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="age"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Alder</FormLabel>
-                <FormControl>
-                  <Input type="number" min={0} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="age"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Alder</FormLabel>
+                    <FormControl>
+                      <Input type="number" min={0} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="gender"
-            render={({ field }) => (
-              <FormItem className="space-y-3">
-                <FormLabel>Kjønn</FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    className="flex flex-col space-y-1"
-                  >
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="male" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Mann</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="female" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Kvinne</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="other" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Annet</FormLabel>
-                    </FormItem>
-                  </RadioGroup>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="postalCode"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Postnummer</FormLabel>
+                    <FormControl>
+                      <Input type="number" min={0} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <FormField
-            control={form.control}
-            name="postalCode"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Postnummer</FormLabel>
-                <FormControl>
-                  <Input type="number" min={0} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+            <div className="flex flex-col gap-4">
+              <FormField
+                control={form.control}
+                name="gender"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel>Kjønn</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex flex-col space-y-1"
+                      >
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="male" />
+                          </FormControl>
+                          <FormLabel className="font-normal">Mann</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="female" />
+                          </FormControl>
+                          <FormLabel className="font-normal">Kvinne</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="other" />
+                          </FormControl>
+                          <FormLabel className="font-normal">Annet</FormLabel>
+                        </FormItem>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="programmingCompetence"
-            render={({ field }) => (
-              <FormItem className="space-y-3">
-                <FormLabel>Programmeringsnivå</FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    className="flex flex-col space-y-1"
-                  >
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="beginner" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Nybegynner</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="experienced" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Erfaren</FormLabel>
-                    </FormItem>
-                  </RadioGroup>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="programmingCompetence"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel>Programmeringsnivå</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex flex-col space-y-1"
+                      >
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="beginner" />
+                          </FormControl>
+                          <FormLabel className="font-normal">
+                            Nybegynner
+                          </FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="experienced" />
+                          </FormControl>
+                          <FormLabel className="font-normal">Erfaren</FormLabel>
+                        </FormItem>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <FormField
-            control={form.control}
-            name="hoodieSize"
-            render={({ field }) => (
-              <FormItem className="space-y-3">
-                <FormLabel>Hettegenserstørrelse</FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    className="flex flex-col space-y-1"
-                  >
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="unwanted" />
-                      </FormControl>
-                      <FormLabel className="font-normal">
-                        Ønsker ikke hettegenser
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="small" />
-                      </FormControl>
-                      <FormLabel className="font-normal">S</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="medium" />
-                      </FormControl>
-                      <FormLabel className="font-normal">M</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="large" />
-                      </FormControl>
-                      <FormLabel className="font-normal">L</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="extra_large" />
-                      </FormControl>
-                      <FormLabel className="font-normal">XL</FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-y-0 space-x-3">
-                      <FormControl>
-                        <RadioGroupItem value="extra_extra_large" />
-                      </FormControl>
-                      <FormLabel className="font-normal">XXL</FormLabel>
-                    </FormItem>
-                  </RadioGroup>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+              <FormField
+                control={form.control}
+                name="hoodieSize"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel>Hettegenserstørrelse</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex flex-col space-y-1"
+                      >
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="unwanted" />
+                          </FormControl>
+                          <FormLabel className="font-normal">
+                            Ønsker ikke hettegenser
+                          </FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="small" />
+                          </FormControl>
+                          <FormLabel className="font-normal">S</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="medium" />
+                          </FormControl>
+                          <FormLabel className="font-normal">M</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="large" />
+                          </FormControl>
+                          <FormLabel className="font-normal">L</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="extra_large" />
+                          </FormControl>
+                          <FormLabel className="font-normal">XL</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-y-0 space-x-3">
+                          <FormControl>
+                            <RadioGroupItem value="extra_extra_large" />
+                          </FormControl>
+                          <FormLabel className="font-normal">XXL</FormLabel>
+                        </FormItem>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
 
           <Button type="submit" disabled={isPending}>
             Meld deg på
