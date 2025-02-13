@@ -1,6 +1,11 @@
 "use client";
 
-import * as React from "react";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -9,20 +14,11 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { ArrowUpDown, ChevronDown } from "lucide-react";
+import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,6 +31,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tables } from "@/generated/database.types";
+import { keepOpen } from "@/lib/utils";
 
 export const columns: ColumnDef<Tables<"EventSignup">>[] = [
   {
@@ -259,6 +256,7 @@ export function UsersTable({ data }: UsersTableProps) {
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
                     }
+                    onSelect={keepOpen}
                   >
                     {column.id}
                   </DropdownMenuCheckboxItem>

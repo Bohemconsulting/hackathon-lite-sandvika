@@ -13,7 +13,7 @@ export default async function DashboardPage() {
   return (
     <div className="flex h-screen flex-col">
       <Navbar links={[]} />
-      <div className="mx-auto flex flex-1 items-center justify-center px-2">
+      <div className="flex flex-1 items-center justify-center px-20">
         <UsersTable data={eventSignups.data} />
       </div>
     </div>
