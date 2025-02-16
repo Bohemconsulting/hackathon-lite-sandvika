@@ -67,7 +67,7 @@ export function SummarySection() {
   ];
 
   return (
-    <section className="mx-auto my-10 flex max-w-4xl flex-col gap-10 lg:my-20 lg:gap-20">
+    <section className="mx-auto mt-10 flex max-w-4xl flex-col gap-10 lg:mt-20 lg:gap-20">
       {sections.map((section, idx) => (
         <div
           key={section.header}
