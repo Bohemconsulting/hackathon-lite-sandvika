@@ -14,10 +14,17 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useReward } from "react-rewards";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { useEventSignupMutation } from "./query";
 
 export function SignUpForm() {
+  const { reward } = useReward("påmeldingsknapp", "confetti", {
+    position: "absolute",
+    elementCount: 75,
+    startVelocity: 40,
+  });
+
   const { mutateAsync, isPending } = useEventSignupMutation();
 
   const form = useForm<FormSchema>({
@@ -58,6 +65,7 @@ export function SignUpForm() {
         description:
           "Du er nå meldt på til Hackathon Lite Sandvika. Vennligst sjekk eposten din for å bekrefte deltakelse.",
       });
+      reward();
     }
 
     form.reset();
@@ -274,7 +282,7 @@ export function SignUpForm() {
             </div>
           </div>
 
-          <Button type="submit" disabled={isPending}>
+          <Button type="submit" disabled={isPending} id="påmeldingsknapp">
             Meld deg på
           </Button>
         </form>
