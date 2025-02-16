@@ -8,13 +8,15 @@ export function SponsorsSection() {
       </h2>
       <div className="flex gap-4.5">
         <div>
-          <Image
-            height={224}
-            width={228}
-            src={"/logos/nrg-logo.png"}
-            alt={"Norges Realfagsgymnas Sandvika"}
-            className="bg-white"
-          />
+          <a href={"https://www.akademiet.no/vgs/baerum/"} target={"_blank"}>
+            <Image
+              height={224}
+              width={228}
+              src={"/logos/nrg-logo.png"}
+              alt={"Norges Realfagsgymnas Sandvika"}
+              className="bg-white"
+            />
+          </a>
         </div>
         <div>
           <Image
@@ -25,12 +27,14 @@ export function SponsorsSection() {
           />
         </div>
         <div>
-          <Image
-            height={224}
-            width={222}
-            src={"/logos/erasmus-logo.jpg"}
-            alt={"Erasmus+"}
-          />
+          <a href={"https://erasmus-plus.ec.europa.eu/"} target={"_blank"}>
+            <Image
+              height={224}
+              width={222}
+              src={"/logos/erasmus-logo.jpg"}
+              alt={"Erasmus+"}
+            />
+          </a>
         </div>
       </div>
     </section>
