@@ -39,7 +39,7 @@ export function SummarySection() {
     },
     {
       header: "Hva?",
-      text: "Hackathon Lite Sandvika er en programmeringskonkurranse med mentorer. Det vil være premier for de beste lagene på over 20 000kr.",
+      text: "Hackathon Lite Sandvika er en programmeringskonkurranse med mentorer og spennede foredragsholdere innen tech-bransjen. Det vil være premier for de beste lagene på over 20 000kr.",
       icon: <Laptop size={16} />,
       image: {
         src: "/mentor.png",
