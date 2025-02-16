@@ -39,7 +39,7 @@ export function SummarySection() {
     },
     {
       header: "Hva?",
-      text: "Hackathon Lite Sandvika er en programmeringskonkurranse med mentorer. Det vil være premier for de beste lagene på over 20 000kr.",
+      text: "Hackathon Lite Sandvika er en programmeringskonkurranse med mentorer og spennede foredragsholdere innen tech-bransjen. Det vil være premier for de beste lagene på over 20 000kr.",
       icon: <Laptop size={16} />,
       image: {
         src: "/mentor.png",
@@ -67,7 +67,7 @@ export function SummarySection() {
   ];
 
   return (
-    <section className="mx-auto my-10 flex max-w-4xl flex-col gap-10 lg:my-20 lg:gap-20">
+    <section className="mx-auto mt-10 flex max-w-4xl flex-col gap-10 lg:mt-20 lg:gap-20">
       {sections.map((section, idx) => (
         <div
           key={section.header}
