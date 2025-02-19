@@ -1,15 +1,15 @@
-// import { createEventSignup } from "@/app/actions";
-import { TablesInsert } from "@/generated/database.types";
-import { useMutation } from "@tanstack/react-query";
+// // import { createEventSignup } from "@/app/actions";
+// import { TablesInsert } from "@/generated/database.types";
+// import { useMutation } from "@tanstack/react-query";
 
-async function create(eventSignup: TablesInsert<"EventSignup">) {
-  console.log(eventSignup);
-  // return createEventSignup(eventSignup);
-}
+// async function create(eventSignup: TablesInsert<"EventSignup">) {
+//   console.log(eventSignup);
+//   // return createEventSignup(eventSignup);
+// }
 
-export function useEventSignupMutation() {
-  return useMutation({
-    mutationFn: create,
-    mutationKey: ["Create Event Signup"],
-  });
-}
+// export function useEventSignupMutation() {
+//   return useMutation({
+//     mutationFn: create,
+//     mutationKey: ["Create Event Signup"],
+//   });
+// }
