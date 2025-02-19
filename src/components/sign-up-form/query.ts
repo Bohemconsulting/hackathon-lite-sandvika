@@ -3,6 +3,7 @@ import { TablesInsert } from "@/generated/database.types";
 import { useMutation } from "@tanstack/react-query";
 
 async function create(eventSignup: TablesInsert<"EventSignup">) {
+  console.log(eventSignup);
   // return createEventSignup(eventSignup);
 }
 
