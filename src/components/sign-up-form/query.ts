@@ -1,9 +1,9 @@
-import { createEventSignup } from "@/app/actions";
+// import { createEventSignup } from "@/app/actions";
 import { TablesInsert } from "@/generated/database.types";
 import { useMutation } from "@tanstack/react-query";
 
 async function create(eventSignup: TablesInsert<"EventSignup">) {
-  return createEventSignup(eventSignup);
+  // return createEventSignup(eventSignup);
 }
 
 export function useEventSignupMutation() {
